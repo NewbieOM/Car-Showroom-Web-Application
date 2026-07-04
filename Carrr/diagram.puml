@@ -1,0 +1,17 @@
+@startuml
+
+
+actor Visitor
+actor Admin
+
+rectangle "Web Browser" as Browser
+rectangle "Express API\n(server.js)" as API
+database "MySQL\ndb car_showroom" as DB
+
+Visitor --> Browser : open index.html / use UI
+Browser --> API : GET /cars,\nPOST /login,…
+API --> DB : SELECT/INSERT/UPDATE
+DB --> API : result
+API --> Browser : JSON response
+Admin --> Browser : admin.html
+@enduml

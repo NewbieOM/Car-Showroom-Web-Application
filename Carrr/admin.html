@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h2>Maxwheels</h2>
+
+      <button type="button" onclick="showSection('test')">Test Drives</button>
+      <button type="button" onclick="showSection('booking')">Bookings</button>
+      <button type="button" onclick="showSection('cars')">Cars</button>
+      <button type="button" onclick="showSection('services')">Services</button>
+      <button type="button" onclick="showSection('users')">Users</button>
+      <button type="button" onclick="showSection('reviews')">Reviews</button>
+      <button type="button" onclick="showSection('messages')">Messages</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- TEST DRIVES -->
+      <section id="testSection">
+        <h2>Test Drives</h2>
+        <table id="testDriveTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Car</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- BOOKINGS -->
+      <section id="bookingSection" style="display:none;">
+        <h2>Bookings</h2>
+        <table id="bookingTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Car</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>City</th>
+              <th>Payment</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- CARS -->
+      <section id="carsSection" style="display:none;">
+        <h2>Cars</h2>
+
+        <div class="form-card" enctype="multipart/form-data">
+          <input id="carName" placeholder="Car Name" required>
+          <input id="carPrice" placeholder="Price" required>
+
+          <!-- ✅ ADD HERE ONLY -->
+          <input type="file" id="carImage">
+
+          <select id="fuelType">
+            <option value="">Select Fuel Type</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+          </select>
+
+          <button type="button" onclick="addCar()">Add Car</button>
+        </div>
+
+        <div id="carsList" class="grid"></div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="servicesSection" style="display:none;">
+        <h2>Services</h2>
+
+        <div class="form-card">
+          <input id="sName" placeholder="Service Title" required>
+          <input id="sDesc" placeholder="Description" required>
+          <!-- <input id="sPrice" placeholder="Price" required> -->
+          <button type="button" onclick="addService()">Add Service</button>
+        </div>
+
+        <div id="servicesList" class="grid"></div>
+      </section>
+
+      <!-- USERS -->
+      <section id="usersSection" style="display:none;">
+        <h2>Users</h2>
+        <div id="usersList" class="grid"></div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviewsSection" style="display:none;">
+        <h2>Reviews</h2>
+        <div id="reviewsList" class="grid"></div>
+      </section>
+
+      <!-- MESSAGES -->
+      <section id="messagesSection" style="display:none;">
+        <h2>Messages</h2>
+        <div id="messagesList" class="grid"></div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+
+
+</body>
+
+</html>
